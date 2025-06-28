@@ -4,9 +4,9 @@ const subscriptions = [
     id: 'spotify',
     name: 'Spotify Premium',
     desc: 'Ad-free music, offline listening, and more.',
-    price: 20, // First month offer
+    price: 10, // First month offer
     original: 49, // Regular price
-    discount: 59, // Discount percentage for first month
+    discount: 80, // Discount percentage for first month
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><circle fill='#1ED760' cx='16' cy='16' r='16'/><path d='M23.1 22.1c-.3 0-.5-.1-.7-.2-5.1-3.1-11.5-1.5-11.6-1.5-.6.2-1.2-.2-1.4-.8-.2-.6.2-1.2.8-1.4.3-.1 7.3-1.8 13.1 1.7.5.3.7 1 .4 1.5-.2.3-.6.5-1 .5zm1.5-3.3c-.4 0-.7-.1-1-.3-5.8-3.6-14.6-2-15-1.9-.7.1-1.3-.3-1.4-1-.1-.7.3-1.3 1-1.4.4-.1 10-.9 16.5 2.2.6.3.8 1.1.5 1.7-.2.4-.6.7-1.1.7zm1.7-3.5c-.4 0-.8-.1-1.1-.3-6.6-4-17.2-2.2-17.7-2.1-.8.1-1.5-.4-1.6-1.2-.1-.8.4-1.5 1.2-1.6.5-.1 12.2-2.1 19.5 2.4.7.4.9 1.3.5 2-.3.4-.7.6-1.2.6z' fill='#fff'/></svg>`,
     brand: {
       color: '#1ED760',
