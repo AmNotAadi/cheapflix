@@ -93,9 +93,8 @@ function renderCatalogue() {
       <div class="card-title">${sub.name}</div>
       <div class="card-desc">${sub.desc}</div>
       <div class="card-price">
-        <span style="color:#D4AF37;font-weight:700;">First Month: ₹${sub.price}</span>
+        <span style="color:#D4AF37;font-weight:700;">₹${sub.price}</span>
         <span style="text-decoration:line-through;opacity:0.6;font-size:0.95em;margin-left:0.5em;">₹${sub.original}</span>
-        <span style="display:block;font-size:0.98em;color:#F3F4F6;opacity:0.85;margin-top:0.2em;">Then: ₹${sub.original}/mo</span>
       </div>
       <button class="add-btn" data-id="${sub.id}">Add to Package</button>
     `;
