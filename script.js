@@ -4,9 +4,9 @@ const subscriptions = [
     id: 'spotify',
     name: 'Spotify Premium',
     desc: 'Ad-free music, offline listening, and more.',
-    price: 129,
+    price: 10, // First-time user offer
     original: 199,
-    discount: 35,
+    discount: 95, // Updated discount percentage
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><circle fill='#1ED760' cx='16' cy='16' r='16'/><path d='M23.1 22.1c-.3 0-.5-.1-.7-.2-5.1-3.1-11.5-1.5-11.6-1.5-.6.2-1.2-.2-1.4-.8-.2-.6.2-1.2.8-1.4.3-.1 7.3-1.8 13.1 1.7.5.3.7 1 .4 1.5-.2.3-.6.5-1 .5zm1.5-3.3c-.4 0-.7-.1-1-.3-5.8-3.6-14.6-2-15-1.9-.7.1-1.3-.3-1.4-1-.1-.7.3-1.3 1-1.4.4-.1 10-.9 16.5 2.2.6.3.8 1.1.5 1.7-.2.4-.6.7-1.1.7zm1.7-3.5c-.4 0-.8-.1-1.1-.3-6.6-4-17.2-2.2-17.7-2.1-.8.1-1.5-.4-1.6-1.2-.1-.8.4-1.5 1.2-1.6.5-.1 12.2-2.1 19.5 2.4.7.4.9 1.3.5 2-.3.4-.7.6-1.2.6z' fill='#fff'/></svg>`,
     brand: {
       color: '#1ED760',
@@ -18,9 +18,9 @@ const subscriptions = [
     id: 'youtube',
     name: 'YouTube Premium',
     desc: 'No ads, background play, and YouTube Music.',
-    price: 149,
+    price: 10, // First-time user offer
     original: 199,
-    discount: 25,
+    discount: 95, // Updated discount percentage
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><rect fill='#fff' width='32' height='32' rx='16'/><path d='M25.6 12.2c-.2-.8-.8-1.4-1.6-1.6C22.5 10 16 10 16 10s-6.5 0-8 .6c-.8.2-1.4.8-1.6 1.6C6 13.7 6 16 6 16s0 2.3.4 3.8c.2.8.8 1.4 1.6 1.6 1.5.6 8 .6 8 .6s6.5 0 8-.6c.8-.2 1.4-.8 1.6-1.6.4-1.5.4-3.8.4-3.8s0-2.3-.4-3.8z' fill='#FF0000'/><polygon points='14,20 20,16 14,12' fill='#fff'/></svg>`,
     brand: {
       color: '#FF0000',
@@ -28,13 +28,15 @@ const subscriptions = [
       text: '#222',
     },
   },
+  // Commented out for now
+  /*
   {
     id: 'duolingo',
     name: 'Duolingo Super',
     desc: 'No Ads, Unlimited Hearts',
-    price: 99,
+    price: 10, // First-time user offer
     original: 149,
-    discount: 34,
+    discount: 93, // Updated discount percentage
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><circle fill='#58CC02' cx='16' cy='16' r='16'/><ellipse cx='11' cy='18' rx='2.2' ry='2.7' fill='#fff'/><ellipse cx='21' cy='18' rx='2.2' ry='2.7' fill='#fff'/><ellipse cx='11' cy='18' rx='1.1' ry='1.3' fill='#222'/><ellipse cx='21' cy='18' rx='1.1' ry='1.3' fill='#222'/><path d='M8 13c2-2 14-2 16 0-1 3-15 3-16 0z' fill='#A3E635'/></svg>`,
     brand: {
       color: '#58CC02',
@@ -46,9 +48,9 @@ const subscriptions = [
     id: 'hotstar',
     name: 'JioHotstar Premium',
     desc: 'Live sports, movies, and TV shows.',
-    price: 99,
+    price: 10, // First-time user offer
     original: 149,
-    discount: 34,
+    discount: 93, // Updated discount percentage
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><rect fill='#fff' width='32' height='32' rx='16'/><circle cx='16' cy='16' r='10' fill='#1C2A5E'/><text x='16' y='20' text-anchor='middle' font-size='10' fill='#00ADEF' font-family='Arial, sans-serif'>hotstar</text></svg>`,
     brand: {
       color: '#1C2A5E',
@@ -56,6 +58,7 @@ const subscriptions = [
       text: '#00ADEF',
     },
   },
+  */
 ];
 
 const catalogueList = document.getElementById('catalogue-list');
