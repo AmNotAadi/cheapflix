@@ -18,9 +18,9 @@ const subscriptions = [
     id: 'youtube',
     name: 'YouTube Premium',
     desc: 'No ads, background play, and YouTube Music.',
-    price: 10, // First month offer
+    price: 79, // Regular price only
     original: 79, // Regular price
-    discount: 87, // Discount percentage for first month
+    discount: 0, // No discount
     icon: `<svg width='32' height='32' viewBox='0 0 32 32'><rect fill='#fff' width='32' height='32' rx='16'/><path d='M25.6 12.2c-.2-.8-.8-1.4-1.6-1.6C22.5 10 16 10 16 10s-6.5 0-8 .6c-.8.2-1.4.8-1.6 1.6C6 13.7 6 16 6 16s0 2.3.4 3.8c.2.8.8 1.4 1.6 1.6 1.5.6 8 .6 8 .6s6.5 0 8-.6c.8-.2 1.4-.8 1.6-1.6.4-1.5.4-3.8.4-3.8s0-2.3-.4-3.8z' fill='#FF0000'/><polygon points='14,20 20,16 14,12' fill='#fff'/></svg>`,
     brand: {
       color: '#FF0000',
@@ -89,12 +89,12 @@ function renderCatalogue() {
     card.style.borderColor = sub.brand.color;
     card.innerHTML = `
       <div class="card-icon">${sub.icon}</div>
-      <div class="discount-sticker" style="background: #D4AF37; color: #23273A;">${sub.discount}% OFF</div>
+      ${sub.discount > 0 ? `<div class="discount-sticker" style="background: #D4AF37; color: #23273A;">${sub.discount}% OFF</div>` : ''}
       <div class="card-title">${sub.name}</div>
       <div class="card-desc">${sub.desc}</div>
       <div class="card-price">
         <span style="color:#D4AF37;font-weight:700;">₹${sub.price}</span>
-        <span style="text-decoration:line-through;opacity:0.6;font-size:0.95em;margin-left:0.5em;">₹${sub.original}</span>
+        ${sub.discount > 0 ? `<span style="text-decoration:line-through;opacity:0.6;font-size:0.95em;margin-left:0.5em;">₹${sub.original}</span>` : ''}
       </div>
       <button class="add-btn" data-id="${sub.id}">Add to Package</button>
     `;
