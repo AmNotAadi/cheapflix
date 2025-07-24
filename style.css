@@ -348,36 +348,51 @@ footer a:hover {
 /* Responsive */
 @media (max-width: 700px) {
   body {
-    padding: 0 0.7em !important;
+    padding: 0 0.5em !important;
     box-sizing: border-box;
   }
   .navbar {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     height: auto !important;
-    padding: 1.1em 0.5em 1.1em 0.5em !important;
-    gap: 0.5em !important;
+    padding: 0.7em 0.2em 0.2em 0.2em !important;
     background: #181824ee !important;
     border-radius: 0 0 18px 18px !important;
-    box-shadow: 0 2px 16px #a259ff33 !important;
+    box-shadow: 0 2px 16px #a259ff33, 0 2px 0 #a259ff33 !important;
+    border-bottom: 2px solid #232136 !important;
+    position: relative;
+    z-index: 20;
+  }
+  .logo {
+    margin-bottom: 0.5em !important;
+    text-align: center !important;
+    font-size: 1.1rem !important;
+    order: -1;
   }
   .nav-links {
     flex-direction: row !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     align-items: center !important;
     width: 100% !important;
-    padding: 0.5em 0 !important;
-    gap: 0.7em !important;
+    padding: 0.2em 0 !important;
+    gap: 0.5em !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   .nav-links a {
     display: inline-block !important;
     margin-bottom: 0 !important;
     width: auto !important;
-    min-width: 0 !important;
+    min-width: 80px !important;
     max-width: 100% !important;
     text-align: center !important;
-    font-size: 1.05rem !important;
-    padding: 0.7em 1.2em !important;
+    font-size: 1rem !important;
+    padding: 0.6em 1em !important;
     border-radius: 12px !important;
     background: #23213633 !important;
     color: #fff !important;
@@ -393,61 +408,77 @@ footer a:hover {
     color: #fff !important;
     box-shadow: 0 2px 12px #f246ff55;
   }
-  .logo {
-    margin-bottom: 0.7em !important;
-    text-align: center !important;
-    font-size: 1.3rem !important;
-  }
   .section, .package-builder {
-    margin-bottom: 1.7em !important;
-    padding: 1.2em 1em !important;
-    border-radius: 18px !important;
+    margin-bottom: 1.1em !important;
+    padding: 0.7em 0.5em !important;
+    border-radius: 16px !important;
     background: #181824ee !important;
-    box-shadow: 0 2px 16px #a259ff22 !important;
+    box-shadow: 0 2px 12px #a259ff22 !important;
   }
   .card, .subscription-card, .launch-offer-card {
-    margin-bottom: 1.5em !important;
-    padding: 1.1em 1em !important;
-    border-radius: 18px !important;
+    margin-bottom: 1em !important;
+    padding: 0.7em 0.5em !important;
+    border-radius: 16px !important;
     background: #232136ee !important;
-    box-shadow: 0 2px 16px #a259ff33 !important;
-    font-size: 1rem !important;
+    box-shadow: 0 2px 12px #a259ff33 !important;
+    font-size: 0.97rem !important;
   }
   .catalogue-list > * {
-    margin-bottom: 1.5em !important;
-  }
-  .card-title, .section-title {
-    font-size: 1.1rem !important;
-    font-weight: 800 !important;
-    margin-bottom: 0.7em !important;
-  }
-  .section-title {
-    font-size: 1.3rem !important;
     margin-bottom: 1em !important;
   }
+  .card-title, .section-title {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5em !important;
+  }
+  .section-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.7em !important;
+  }
+  .hero-title {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.3em !important;
+    line-height: 1.15 !important;
+  }
+  #hero-subtext {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5em !important;
+  }
   .add-btn, .whatsapp-btn, .remove-btn, .cta-btn {
-    font-size: 1.05rem !important;
-    padding: 0.9em 1.2em !important;
-    min-height: 44px !important;
-    border-radius: 14px !important;
-    margin-top: 0.7em !important;
+    font-size: 0.97rem !important;
+    padding: 0.6em 0.7em !important;
+    min-height: 40px !important;
+    border-radius: 12px !important;
+    margin-top: 0.4em !important;
     width: 100%;
     box-sizing: border-box;
   }
   .selected-card {
-    padding: 0.7em 0.7em !important;
-    font-size: 1rem !important;
-    gap: 0.5em !important;
-    border-radius: 14px !important;
+    padding: 0.5em 0.5em !important;
+    font-size: 0.97rem !important;
+    gap: 0.3em !important;
+    border-radius: 12px !important;
   }
   .package-summary {
-    gap: 0.7em !important;
-    margin-top: 0.7em !important;
+    gap: 0.4em !important;
+    margin-top: 0.4em !important;
     flex-direction: column !important;
     align-items: stretch !important;
   }
   .catalogue-list {
     padding: 0 !important;
+  }
+  .feature-list {
+    margin: 0.7em 0 0 0 !important;
+  }
+  .feature-list li {
+    font-size: 0.93rem !important;
+    margin-bottom: 0.4em !important;
+  }
+  .feature-bullet {
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 0.5em !important;
   }
 }
 @media (max-width: 600px) {
@@ -612,6 +643,19 @@ footer a:hover {
   .card, .subscription-card, .launch-offer-card {
     padding: 0.1rem 0.02rem !important;
     margin: 0 0 0.5rem 0 !important;
+  }
+  .section, .package-builder {
+    padding: 0.5em 0.2em !important;
+    margin-bottom: 0.7em !important;
+  }
+  .feature-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 0.3em !important;
+  }
+  .feature-list li {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.2em !important;
   }
 }
 
