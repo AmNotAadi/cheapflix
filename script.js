@@ -171,29 +171,8 @@ function renderSelected() {
 checkoutBtn && (checkoutBtn.onclick = function(e) {
   if (selected.length === 0) return;
   buttonRipple(e);
-  
-  // Build detailed message
-  let messageLines = [];
-  messageLines.push("Hi Cheapflix! I want to order:");
-  let totalBeforeDiscount = 0;
-  selected.forEach(id => {
-    const sub = subscriptions.find(s => s.id === id);
-    totalBeforeDiscount += sub.price;
-    messageLines.push(`• ${sub.name}: ₹${sub.price}`);
-  });
-  // Calculate discount
-  let discount = 0;
-  if (selected.length >= 2) {
-    discount = Math.round(totalBeforeDiscount * 0.10);
-  }
-  const finalTotal = totalBeforeDiscount - discount;
-  messageLines.push(`Subtotal: ₹${totalBeforeDiscount}`);
-  if (discount > 0) {
-    messageLines.push(`Combo Discount (10%): -₹${discount}`);
-  }
-  messageLines.push(`Final Total: ₹${finalTotal}`);
-  messageLines.push("Please help me complete my order!");
-  const message = messageLines.join('\n');
+  // Always send the same message
+  const message = "Hi Cheapflix! I want to purchase Spotify Premium!";
   const whatsappNumber = '919202718909';
   const encodedMsg = encodeURIComponent(message);
   window.open(`https://wa.me/${whatsappNumber}?text=${encodedMsg}`, '_blank');
