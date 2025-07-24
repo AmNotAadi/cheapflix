@@ -347,12 +347,47 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 700px) {
+  .navbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    height: auto !important;
+    padding: 0.7em 0.5em 0.7em 0.5em !important;
+    gap: 0.2em !important;
+  }
+  .nav-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    padding: 0.5em 0 !important;
+    gap: 0 !important;
+  }
+  .nav-links a {
+    margin-bottom: 0.5em !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .nav-links a:last-child {
+    margin-bottom: 0 !important;
+  }
+  .logo {
+    margin-bottom: 0.5em !important;
+    text-align: left !important;
+  }
   .section, .package-builder {
-    padding: 0.7rem 0.3rem;
-}
-  .catalogue-list {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    margin-bottom: 1.2em !important;
+    padding: 0.7em 0.5em !important;
+  }
+  .card, .subscription-card, .launch-offer-card {
+    margin-bottom: 1.2em !important;
+    padding: 0.7em 0.5em !important;
+  }
+  .catalogue-list > * {
+    margin-bottom: 1.2em !important;
   }
   .navbar {
     padding: 0 0.5rem;
@@ -434,8 +469,40 @@ footer a:hover {
     overflow-x: hidden !important;
     max-width: 100vw;
   }
+  .navbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    height: auto !important;
+    padding: 0.7em 0.3em 0.7em 0.3em !important;
+    gap: 0.2em !important;
+  }
+  .nav-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    padding: 0.5em 0 !important;
+    gap: 0 !important;
+  }
+  .nav-links a {
+    margin-bottom: 0.5em !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .nav-links a:last-child {
+    margin-bottom: 0 !important;
+  }
+  .logo {
+    margin-bottom: 0.5em !important;
+    text-align: left !important;
+  }
   .section, .package-builder {
-    padding: 0.2rem 0.05rem !important;
+    margin-bottom: 1.2em !important;
+    padding: 0.7em 0.3em !important;
     margin: 0.5rem 0 !important;
     width: 100% !important;
     min-width: 0 !important;
@@ -448,7 +515,8 @@ footer a:hover {
     width: 100% !important;
   }
   .card, .subscription-card, .launch-offer-card {
-    padding: 0.3rem 0.1rem !important;
+    margin-bottom: 1.2em !important;
+    padding: 0.7em 0.3em !important;
     margin: 0 0 1rem 0 !important;
     min-width: 0 !important;
     width: 100% !important;
