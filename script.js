@@ -110,6 +110,13 @@ function renderCatalogue() {
       card.querySelector('.add-btn').onclick = (e) => {
         addToPackage(sub.id);
         buttonRipple(e);
+        if (sub.id === 'spotify') {
+          // Scroll to packages section after adding Spotify
+          const packagesSection = document.getElementById('packages');
+          if (packagesSection) {
+            packagesSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
       };
     }
     catalogueList.appendChild(card);
