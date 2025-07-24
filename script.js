@@ -88,20 +88,30 @@ function renderCatalogue() {
     card.className = 'card';
     card.style.borderColor = sub.brand.color;
     card.innerHTML = `
-      <div class="card-icon">${sub.icon}</div>
-      ${sub.discount > 0 ? `<div class="discount-sticker" style="background: #D4AF37; color: #23273A;">${sub.discount}% OFF</div>` : ''}
-      <div class="card-title">${sub.name}</div>
-      <div class="card-desc">${sub.desc}</div>
-      <div class="card-price">
-        <span style="color:#D4AF37;font-weight:700;">₹${sub.price}</span>
-        ${sub.discount > 0 ? `<span style="text-decoration:line-through;opacity:0.6;font-size:0.95em;margin-left:0.5em;">₹${sub.original}</span>` : ''}
+      <div style="display:flex; width:100%; align-items:flex-start; margin-bottom:0.2em; gap:0.7em;">
+        <div style="display:flex; align-items:center; gap:0.7em; flex:1 1 0; min-width:0; overflow:hidden;">
+          <div class="card-icon">${sub.icon}</div>
+          <div style="min-width:0;">
+            <div class="card-title" style="font-size:1.35rem; font-weight:800; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${sub.name}</div>
+            <div style="color:#A259FF; font-size:1.02rem; font-weight:700; margin-top:0.1em; letter-spacing:0.03em;">1 MONTH</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; text-align:right; width:90px; flex:0 0 90px; gap:0.3em;">
+          <div class="card-price" style="font-size:1.35rem; font-weight:800; color:#fff;">₹${sub.price}</div>
+          ${(sub.discount > 0 && sub.id === 'spotify') ? `<div style=\"text-decoration:line-through;opacity:0.6;font-size:1.1rem; font-weight:700; color:#fff; margin-top:-0.3em;\">₹${sub.original}</div>` : ''}
+          ${(sub.discount > 0 && sub.id !== 'spotify') ? `<div style=\"text-decoration:line-through;opacity:0.6;font-size:1.1rem; font-weight:700; color:#fff;\">₹${sub.original}</div>` : ''}
+          ${(sub.discount > 0 && sub.id !== 'spotify') ? `<div class=\"discount-sticker flex-badge\">${sub.discount}% OFF</div>` : ''}
+        </div>
       </div>
-      <button class="add-btn" data-id="${sub.id}">Add to Package</button>
+      <ul class="feature-list">\n        <li><span class="feature-bullet"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="5" fill="#181824"/><rect x="2" y="2" width="16" height="16" rx="5" stroke="#a259ff" stroke-width="2"/><path d="M6 11l3 3 5-5" stroke="#a259ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>30 Days Warranty</li>\n        <li><span class="feature-bullet"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="5" fill="#181824"/><rect x="2" y="2" width="16" height="16" rx="5" stroke="#a259ff" stroke-width="2"/><path d="M6 11l3 3 5-5" stroke="#a259ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Instant Delivery</li>\n        <li><span class="feature-bullet"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="5" fill="#181824"/><rect x="2" y="2" width="16" height="16" rx="5" stroke="#a259ff" stroke-width="2"/><path d="M6 11l3 3 5-5" stroke="#a259ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${sub.desc}</li>\n      </ul>
+      ${sub.id === 'youtube' ? `<div style="display:flex; align-items:center; justify-content:center; gap:0.7em; margin-top:1.2em;"><button class="add-btn" disabled style="opacity:0.6; cursor:not-allowed;">Buy Now</button><span style="color:#ff4dff; font-weight:900; font-size:1.08em; letter-spacing:0.04em;">OUT OF STOCK</span></div>` : `<button class="add-btn" data-id="${sub.id}" style="margin-top:1.2em;">Buy Now</button>`}
     `;
-    card.querySelector('.add-btn').onclick = (e) => {
-      addToPackage(sub.id);
-      buttonRipple(e);
-    };
+    if (sub.id !== 'youtube') {
+      card.querySelector('.add-btn').onclick = (e) => {
+        addToPackage(sub.id);
+        buttonRipple(e);
+      };
+    }
     catalogueList.appendChild(card);
   });
   animateCards();
@@ -247,13 +257,17 @@ function enhanceHowWeWork() {
   // Typewriter effect
   const originalText = howWeWorkText.textContent;
   howWeWorkText.textContent = '';
+  howWeWorkText.style.opacity = 0;
   let i = 0;
-  
+
   function typeWriter() {
     if (i < originalText.length) {
       howWeWorkText.textContent += originalText.charAt(i);
       i++;
-      setTimeout(typeWriter, 50);
+      setTimeout(typeWriter, 20);
+    } else {
+      howWeWorkText.style.transition = 'opacity 0.7s cubic-bezier(.39,.575,.56,1.000)';
+      howWeWorkText.style.opacity = 1;
     }
   }
 
@@ -261,7 +275,7 @@ function enhanceHowWeWork() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 300);
         observer.unobserve(entry.target);
       }
     });
@@ -294,6 +308,12 @@ function enhanceHowWeWork() {
 // Initialize enhancements
 document.addEventListener('DOMContentLoaded', function() {
   enhanceHowWeWork();
+  var fm = document.getElementById('first-month-animate');
+  if (fm) {
+    fm.textContent = 'First Month';
+    fm.style.display = 'inline-block';
+    // No JS animation needed, CSS handles highlight effect
+  }
 });
 
 // Initial render (only if catalogueList exists)
