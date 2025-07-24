@@ -347,121 +347,107 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 700px) {
+  body {
+    padding: 0 0.7em !important;
+    box-sizing: border-box;
+  }
   .navbar {
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: center !important;
     height: auto !important;
-    padding: 0.7em 0.5em 0.7em 0.5em !important;
-    gap: 0.2em !important;
+    padding: 1.1em 0.5em 1.1em 0.5em !important;
+    gap: 0.5em !important;
+    background: #181824ee !important;
+    border-radius: 0 0 18px 18px !important;
+    box-shadow: 0 2px 16px #a259ff33 !important;
   }
   .nav-links {
-    flex-direction: column !important;
-    align-items: stretch !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
     width: 100% !important;
     padding: 0.5em 0 !important;
-    gap: 0 !important;
+    gap: 0.7em !important;
   }
   .nav-links a {
-    margin-bottom: 0.5em !important;
+    display: inline-block !important;
+    margin-bottom: 0 !important;
     width: auto !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    text-align: left !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    text-align: center !important;
+    font-size: 1.05rem !important;
+    padding: 0.7em 1.2em !important;
+    border-radius: 12px !important;
+    background: #23213633 !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 1px 6px #a259ff22;
+    transition: background 0.18s, color 0.18s;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: initial !important;
   }
-  .nav-links a:last-child {
-    margin-bottom: 0 !important;
+  .nav-links a.active, .nav-links a:hover {
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end)) !important;
+    color: #fff !important;
+    box-shadow: 0 2px 12px #f246ff55;
   }
   .logo {
-    margin-bottom: 0.5em !important;
-    text-align: left !important;
+    margin-bottom: 0.7em !important;
+    text-align: center !important;
+    font-size: 1.3rem !important;
   }
   .section, .package-builder {
-    margin-bottom: 1.2em !important;
-    padding: 0.7em 0.5em !important;
+    margin-bottom: 1.7em !important;
+    padding: 1.2em 1em !important;
+    border-radius: 18px !important;
+    background: #181824ee !important;
+    box-shadow: 0 2px 16px #a259ff22 !important;
   }
   .card, .subscription-card, .launch-offer-card {
-    margin-bottom: 1.2em !important;
-    padding: 0.7em 0.5em !important;
+    margin-bottom: 1.5em !important;
+    padding: 1.1em 1em !important;
+    border-radius: 18px !important;
+    background: #232136ee !important;
+    box-shadow: 0 2px 16px #a259ff33 !important;
+    font-size: 1rem !important;
   }
   .catalogue-list > * {
-    margin-bottom: 1.2em !important;
+    margin-bottom: 1.5em !important;
   }
-  .navbar {
-    padding: 0 0.5rem;
-    height: 54px;
-  }
-  .logo {
-    font-size: 1.1rem;
-  }
-  .nav-links {
-    gap: 0.7rem;
-  }
-  .nav-links a {
-    font-size: 0.98rem;
-    padding: 0.3em 0.2em;
-  }
-  .hero {
-    padding: 2.2rem 0 1.2rem 0;
-  }
-  .hero-title {
-    font-size: 1.5rem !important;
-    margin-bottom: 0.4em !important;
-  }
-  #hero-subtext {
+  .card-title, .section-title {
     font-size: 1.1rem !important;
+    font-weight: 800 !important;
     margin-bottom: 0.7em !important;
   }
-  .cta-btn {
-    font-size: 1rem;
-    padding: 0.7em 1.2em;
-    margin-top: 0.7rem;
+  .section-title {
+    font-size: 1.3rem !important;
+    margin-bottom: 1em !important;
   }
-  .card, .subscription-card, .launch-offer-card {
-    padding: 0.7rem !important;
-    min-width: 0;
-    font-size: 0.98rem;
-  }
-  .card-title {
-    font-size: 1.05rem;
-  }
-  .card-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.5rem;
-  }
-  .discount-sticker {
-    font-size: 0.85rem;
-    padding: 0.2rem 0.7rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-  .add-btn, .whatsapp-btn, .remove-btn {
-    font-size: 0.98rem;
-    padding: 0.6rem 1.1rem;
-    margin-top: 0.3rem;
+  .add-btn, .whatsapp-btn, .remove-btn, .cta-btn {
+    font-size: 1.05rem !important;
+    padding: 0.9em 1.2em !important;
+    min-height: 44px !important;
+    border-radius: 14px !important;
+    margin-top: 0.7em !important;
+    width: 100%;
+    box-sizing: border-box;
   }
   .selected-card {
-    padding: 0.6rem 0.7rem;
-    font-size: 0.98rem;
-    gap: 0.5rem;
+    padding: 0.7em 0.7em !important;
+    font-size: 1rem !important;
+    gap: 0.5em !important;
+    border-radius: 14px !important;
   }
   .package-summary {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.7rem;
-    margin-top: 0.7rem;
+    gap: 0.7em !important;
+    margin-top: 0.7em !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
-  .section-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.7rem;
-  }
-  footer {
-    font-size: 0.95rem;
-    padding: 1.1rem 0 0.7rem 0;
-    margin-top: 1.5rem;
+  .catalogue-list {
+    padding: 0 !important;
   }
 }
 @media (max-width: 600px) {
@@ -615,7 +601,7 @@ footer a:hover {
   .card-title {
     font-size: 0.7rem !important;
   }
-  .add-btn, .whatsapp-btn, .remove-btn {
+  .add-btn, .whatsapp-btn, .remove-btn, .cta-btn {
     font-size: 0.7rem !important;
     padding: 0.15rem 0.2rem !important;
     min-height: 36px !important;
